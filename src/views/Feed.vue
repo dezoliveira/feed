@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-  import { getAuth } from 'firebase/auth';
+  import { getAuth, onAuthStateChanged } from 'firebase/auth';
   import { useRouter } from 'vue-router'
   import { onBeforeUnmount } from 'vue'
 
@@ -14,7 +14,7 @@
 
   const auth = getAuth()
 
-  const authListener = await onAuthStateChanged(auth, function(user) {
+  const authListener = onAuthStateChanged(auth, function(user) {
     if (!user) { // not logged in
       alert('you must be logged in to view this. redirecting to the home page')
       router.push('/')

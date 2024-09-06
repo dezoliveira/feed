@@ -18,20 +18,23 @@
 </template>
 <script setup>
   import { ref, watchEffect } from 'vue'
-  import { onAuthStateChanged, signOut } from 'firebase/auth';
+  import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
   import { useRouter } from 'vue-router';
 
   const isLoggedIn = ref(true)
-  const auth = signOut()
   const router = useRouter()
 
-  // runs after firebase is initialized
-  onAuthStateChanged(auth, function(user) {
-    if (user) {
-      isLoggedIn.value = true
-    } else {
-      isLoggedIn.value = false
-    }
+  const auth = getAuth()
+
+  watchEffect(() => {
+    // runs after firebase is initialized
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        isLoggedIn.value = true
+      } else {
+        isLoggedIn.value = false
+      }
+    })
   })
 
   const logOut = async () => {
