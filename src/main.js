@@ -18,6 +18,8 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 
+export default firebaseApp
+
 const app = createApp(App)
 
 app.use(router)

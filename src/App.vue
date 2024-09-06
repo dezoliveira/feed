@@ -35,7 +35,7 @@
   })
 
   const logOut = async () => {
-    await signOut()
+    await auth.signOut()
     router.push('/')
   }
 </script>

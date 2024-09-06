@@ -1,9 +1,28 @@
-<script setup>
-</script>
 <template>
   <div class="feed">
-    <h1>feed</h1>
+    <h1>Feed</h1>
+    <h3>This page is for users only</h3>
   </div>
 </template>
-<style>
-</style>
+
+<script setup>
+  import { getAuth } from 'firebase/auth';
+  import { useRouter } from 'vue-router'
+  import { onBeforeUnmount } from 'vue'
+
+  const router = useRouter()
+
+  const auth = getAuth()
+
+  const authListener = await onAuthStateChanged(auth, function(user) {
+    if (!user) { // not logged in
+      alert('you must be logged in to view this. redirecting to the home page')
+      router.push('/')
+    }
+  })
+
+  onBeforeUnmount(() => {
+    // clear up listener
+    authListener()
+  })
+</script>
