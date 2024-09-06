@@ -28,7 +28,7 @@
 
     .then((data) => {
       console.log('Successfully registered!');
-      router.push('/feed') // redirect to the feed
+      router.push('/sign-in') // redirect to the feed
     })
     
     .catch(error => {
