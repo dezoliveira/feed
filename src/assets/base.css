@@ -3,3 +3,7 @@
 body {
     font-family: 'SUSE', sans-serif;
 }
+
+* {
+    box-sizing: border-box;
+}
