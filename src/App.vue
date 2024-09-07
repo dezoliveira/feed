@@ -1,13 +1,17 @@
 <template>
   <div>
     <nav class="navbar">
-      <RouterLink to="/">Home</RouterLink>
-      <span v-if="isLoggedIn">
-        <RouterLink to="/feed">Feed</RouterLink>
-      </span>
+      <div class="nav-links">
+        <span>
+          <RouterLink to="/">Home</RouterLink>
+        </span>
+        <span v-if="isLoggedIn">
+          <RouterLink to="/feed">Feed</RouterLink>
+        </span>
+      </div>
       <div class="auth-buttons">
         <span v-if="isLoggedIn">
-         <button @click="logOut">Logout</button> 
+         <button @click="logOut" class="button primary">Logout</button> 
         </span>
         <span v-else>
           <span>
@@ -71,7 +75,8 @@
       h-[20%]
   }
 
-  .auth-buttons span {
+  .auth-buttons span,
+  .nav-links {
     @apply 
       flex
       gap-2
