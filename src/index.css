@@ -21,4 +21,5 @@ h3 {
 input {
   @apply
     bg-transparent
+    focus:outline-0
 }
