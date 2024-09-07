@@ -5,6 +5,13 @@
     px-[10px]
     py-[4px]
     bg-slate-50
+    shadow-md
+}
+
+.button:hover {
+  @apply
+    cursor-pointer
+    opacity-90
 }
 
 .primary {
@@ -15,4 +22,50 @@
 .secondary {
   @apply
     bg-cyan-500
+}
+
+.success {
+  @apply
+    bg-green-400
+}
+
+.errorMessage {
+  @apply
+    text-red-500
+}
+
+.card {
+  @apply
+    shadow-xl
+    w-[60vh]
+}
+
+.card-header {
+  @apply
+    bg-slate-800
+    w-full
+    p-2
+}
+
+.card-header h3 {
+  @apply
+    text-slate-50
+}
+
+.form {
+  @apply
+    flex
+    gap-6
+    flex-col
+    p-8
+}
+
+.form input {
+  @apply
+    border-b-2
+}
+
+.form button {
+  @apply
+    my-4
 }
