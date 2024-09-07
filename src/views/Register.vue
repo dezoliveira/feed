@@ -1,11 +1,15 @@
-<template>
+<template>  
   <div class="register">
-    <form class="form" @submit.prevent="register">
-      <h1>Create an Account</h1>
-      <input type="text" placeholder="Email" v-model="email" />
-      <input type="password" placeholder="Password" v-model="password" />
-      <button>Submit</button>
-    </form>
+    <div class="card">
+      <div class="card-header">
+        <h3>Create an Account</h3>
+      </div>
+      <form class="form" @submit.prevent="register">
+        <input type="text" placeholder="Email" v-model="email" />
+        <input type="password" placeholder="Password" v-model="password" />
+        <button class="button success">Submit</button>
+      </form>
+    </div>
   </div>
 </template>
 <script setup>
@@ -37,8 +41,12 @@
   }
 </script>
 <style scoped>
-  .form {
-    display: flex;
-    flex-direction: column;
+  .register {
+    @apply
+      w-full
+      h-[80vh]
+      flex
+      items-center
+      justify-center
   }
 </style>
