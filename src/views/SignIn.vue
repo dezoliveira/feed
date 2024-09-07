@@ -1,12 +1,16 @@
 <template>
   <div class="signIn">
-    <form class="form" @submit.prevent="signUp">
-      <h1>Signup with login</h1>
-      <input type="text" placeholder="Email" v-model="email" />
-      <input type="password" placeholder="Password" v-model="password" />
-      <p v-show="errorMessage">{{ errorMessage }}</p>
-      <button>Submit</button>
-    </form>
+    <div class="card">
+      <div class="card-header">
+        <h3>Signup with login</h3>
+      </div>
+      <form class="form" @submit.prevent="signUp">
+        <input type="text" placeholder="Email" v-model="email" />
+        <input type="password" placeholder="Password" v-model="password" />
+        <p v-show="errorMessage" class="errorMessage">{{ errorMessage }}</p>
+        <button class="button success">Submit</button>
+      </form>
+    </div>
   </div>
 </template>
 <script setup>
@@ -61,8 +65,12 @@
 
 </script>
 <style scoped>
-  .form {
-    display: flex;
-    flex-direction: column;
+  .signIn {
+    @apply
+      w-full
+      h-[80vh]
+      flex
+      items-center
+      justify-center
   }
 </style>
