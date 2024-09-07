@@ -63,7 +63,7 @@
       items-center
       justify-between
       gap-4
-      bg-slate-900 
+      bg-slate-800 
       px-[24px]
       py-[10px]
       text-slate-50
@@ -75,22 +75,5 @@
     @apply 
       flex
       gap-2
-  }
-
-  .button {
-    @apply 
-      px-[10px]
-      py-[4px]
-      bg-slate-50
-  }
-
-  .primary {
-    @apply
-      bg-orange-500
-  }
-
-  .secondary {
-    @apply
-      bg-cyan-500
   }
 </style>

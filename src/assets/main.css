@@ -1,1 +1,18 @@
 @import './base.css';
+
+.button {
+  @apply 
+    px-[10px]
+    py-[4px]
+    bg-slate-50
+}
+
+.primary {
+  @apply
+    bg-orange-500
+}
+
+.secondary {
+  @apply
+    bg-cyan-500
+}
