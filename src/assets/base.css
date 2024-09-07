@@ -2,6 +2,7 @@
 
 body {
     font-family: 'SUSE', sans-serif;
+    @apply bg-slate-100;
 }
 
 * {

@@ -37,7 +37,9 @@
 .card {
   @apply
     shadow-xl
-    w-[60vh]
+    sm:w-[60vh]
+    w-[40vh]
+    bg-slate-50
 }
 
 .card-header {
