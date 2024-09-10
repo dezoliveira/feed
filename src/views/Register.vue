@@ -6,9 +6,15 @@
       </div>
       <form class="form" @submit.prevent="register">
         <input type="text" placeholder="Email" v-model="email" />
-        <span class="text-red-500" v-if="formData.email.error">{{ formData.email.message }}</span>
+        <span class="text-red-500" v-if="formData.email.error">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          {{ formData.email.message }}
+        </span>
         <input type="password" placeholder="Password" v-model="password" />
-        <span class="text-red-500" v-if="formData.password.error">{{ formData.password.message }}</span>
+        <span class="text-red-500" v-if="formData.password.error">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          {{ formData.password.message }}
+        </span>
         <p v-show="errorMessage" class="errorMessage">{{ errorMessage }}</p>
         <button class="button success">Submit</button>
       </form>
